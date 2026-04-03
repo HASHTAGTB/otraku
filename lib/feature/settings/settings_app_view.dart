@@ -172,6 +172,16 @@ class SettingsAppSubview extends ConsumerWidget {
                 highContrast: options.highContrast,
               ),
             ),
+            Padding(
+              padding: tilePadding,
+              child: ChipSelector.ensureSelected(
+                title: 'Score Steps',
+                items: [0.1, 0.5, 1].map((v) => ('$v', v)).toList(),
+                value: options.scoreSteps,
+                onChanged: (v) => update(options.copyWith(scoreSteps: v.toDouble())),
+                highContrast: options.highContrast,
+              ),
+            ),
           ],
         ),
         ExpansionTile(

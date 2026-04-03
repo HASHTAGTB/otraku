@@ -233,6 +233,18 @@ class _ButtonRow extends StatelessWidget {
         highContrast: highContrast,
         onTap: () => context.push(Routes.reviews(userId)),
       ),
+      _Button(
+        label: '67',
+        icon: Icons.handshake,
+        highContrast: highContrast,
+        onTap: () => context.push(Routes.reviews(userId)),
+      ),
+      _Button(
+        label: '67',
+        icon: Icons.handshake,
+        highContrast: highContrast,
+        onTap: () => context.push(Routes.reviews(userId)),
+      ),
     ];
 
     return SliverPadding(

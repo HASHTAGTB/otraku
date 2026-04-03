@@ -182,7 +182,7 @@ class _PieLines extends CustomPainter {
     }
 
     final radius = math.min(size.width, size.height) / 2;
-    final center = Offset(radius, radius);
+    final center = Offset(size.width / 2, size.height / 2);
     final offset = math.pi * 2 - categories.length * 0.05;
     double angle = math.pi;
 

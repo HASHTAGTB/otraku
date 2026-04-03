@@ -189,6 +189,7 @@ class Options {
     required this.homeTab,
     required this.discoverType,
     required this.imageQuality,
+    required this.scoreSteps,
     required this.animeCollectionPreview,
     required this.mangaCollectionPreview,
     required this.confirmExit,
@@ -206,6 +207,7 @@ class Options {
     homeTab: .feed,
     discoverType: .anime,
     imageQuality: .high,
+    scoreSteps: 0.1,
     animeCollectionPreview: true,
     mangaCollectionPreview: true,
     confirmExit: false,
@@ -223,6 +225,7 @@ class Options {
     homeTab: HomeTab.values.getOrFirst(map['homeTab']),
     discoverType: DiscoverType.values.getOrFirst(map['discoverType']),
     imageQuality: ImageQuality.values.getOrNull(map['imageQuality']) ?? .high,
+    scoreSteps: map['scoreSteps'] ?? 0.1,
     animeCollectionPreview: map['animeCollectionPreview'] ?? true,
     mangaCollectionPreview: map['mangaCollectionPreview'] ?? true,
     confirmExit: map['confirmExit'] ?? false,
@@ -239,6 +242,7 @@ class Options {
   final HomeTab homeTab;
   final DiscoverType discoverType;
   final ImageQuality imageQuality;
+  final double scoreSteps;
   final bool animeCollectionPreview;
   final bool mangaCollectionPreview;
   final bool confirmExit;
@@ -255,6 +259,7 @@ class Options {
     HomeTab? homeTab,
     DiscoverType? discoverType,
     ImageQuality? imageQuality,
+    double? scoreSteps,
     bool? animeCollectionPreview,
     bool? mangaCollectionPreview,
     bool? confirmExit,
@@ -270,6 +275,7 @@ class Options {
     homeTab: homeTab ?? this.homeTab,
     discoverType: discoverType ?? this.discoverType,
     imageQuality: imageQuality ?? this.imageQuality,
+    scoreSteps: scoreSteps ?? this.scoreSteps,
     animeCollectionPreview: animeCollectionPreview ?? this.animeCollectionPreview,
     mangaCollectionPreview: mangaCollectionPreview ?? this.mangaCollectionPreview,
     confirmExit: confirmExit ?? this.confirmExit,
@@ -287,6 +293,7 @@ class Options {
     'homeTab': homeTab.index,
     'discoverType': discoverType.index,
     'imageQuality': imageQuality.index,
+    'scoreSteps': scoreSteps,
     'animeCollectionPreview': animeCollectionPreview,
     'mangaCollectionPreview': mangaCollectionPreview,
     'confirmExit': confirmExit,

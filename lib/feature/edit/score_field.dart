@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:otraku/feature/media/media_models.dart';
 import 'package:otraku/util/theming.dart';
+import 'package:otraku/feature/viewer/persistence_provider.dart';
 
 /// Score picker.
 class ScoreField extends StatefulWidget {
@@ -129,14 +131,14 @@ class _TenScorePicker extends StatelessWidget {
   }
 }
 
-class _TenDecimalScorePicker extends StatelessWidget {
+class _TenDecimalScorePicker extends ConsumerWidget {
   const _TenDecimalScorePicker(this.score, this.onChanged);
 
   final double score;
   final void Function(double) onChanged;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       children: [
         Expanded(
@@ -145,7 +147,7 @@ class _TenDecimalScorePicker extends StatelessWidget {
             onChanged: (v) => onChanged((v * 10).round() / 10),
             min: 0,
             max: 10,
-            divisions: 100,
+            divisions: (10 / ref.read(persistenceProvider).options.scoreSteps).toInt(),
           ),
         ),
         SizedBox(width: 40, child: Text(score.toStringAsFixed(1))),
