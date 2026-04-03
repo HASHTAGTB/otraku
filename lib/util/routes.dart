@@ -33,7 +33,6 @@ import 'package:otraku/feature/user/user_providers.dart';
 import 'package:otraku/feature/user/user_view.dart';
 import 'package:otraku/widget/loaders.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:otraku/feature/booru/booru_view.dart';
 
 class Routes {
   const Routes._();
@@ -90,8 +89,6 @@ class Routes {
   static String reviews(int id) => '/reviews/$id';
 
   static String statistics(int id) => '/statistics/$id';
-
-  static String booru(String tag) => '/booru/$tag';
 
   static GoRouter buildRouter(bool Function() mustConfirmExit) {
     final onExit = (BuildContext context, GoRouterState _) async {
@@ -295,10 +292,6 @@ class Routes {
         redirect: (context, state) => '/thread/${state.pathParameters['id']}',
       ),
       GoRoute(path: '/forum/:_([^/]*)', redirect: (context, state) => '/forum'),
-      GoRoute(
-        path: '/booru/:tag',
-        builder: (context, state) => BooruView(tag: state.pathParameters['tag'] ?? 'all'),
-      ),
     ];
 
     return GoRouter(
