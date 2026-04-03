@@ -237,7 +237,7 @@ class _ButtonRow extends StatelessWidget {
         label: '67',
         icon: Icons.handshake,
         highContrast: highContrast,
-        onTap: () => context.push(Routes.reviews(userId)),
+        onTap: () => context.push('/booru/waguri_kaoruko'),
       ),
       _Button(
         label: '67',
